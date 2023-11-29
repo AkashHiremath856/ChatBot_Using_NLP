@@ -10,6 +10,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 import streamlit as st
 import warnings
 
+
+nltk.download("punkt")
+nltk.download("wordnet")
+nltk.download("stopwords")
+
 warnings.filterwarnings("ignore")
 
 data = pd.read_csv("data.csv")
@@ -59,7 +64,8 @@ def get_response(text):
     return f"Please try something else"
 
 
-chat_history=[]
+chat_history = []
+
 
 def main():
     st.title("Know about me")
