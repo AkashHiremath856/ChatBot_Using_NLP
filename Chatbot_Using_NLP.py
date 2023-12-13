@@ -60,7 +60,7 @@ def get_response(text):
         target_answers = []
         for q in high_similarity_questions:
             target_answers.append(data[data["Questions"] == q]["Answers"].values[0])
-        return target_answers[0]
+        return f"Akash's {text} {target_answers[0]}"
     return f"Please try something else"
 
 
@@ -68,7 +68,7 @@ chat_history = []
 
 
 def main():
-    st.title("Know about me")
+    st.title("Know about Akash")
     if chat_history:
         st.text("Chat History:")
         for entry in chat_history:
